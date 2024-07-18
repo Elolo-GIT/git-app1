@@ -1,0 +1,144 @@
+<!--Exemple 
+Formulaire type-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formulaire Admin</title>
+    <style type="text/css">
+      fieldset {
+        border: double medium #ac5834b4;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+                        L'attribut action="nom de fichier.php" repère 1 , 
+                      il désigne le fichier qui va traiter, sur le serveur
+                        les informations saisies dans le formulaire.
+
+
+                      Pour que le fichier qui traite les données soit a coup sûr 
+                      celui qui contient le formulaire,  
+                      on peut utiliser la variable $_SERVER["PHP_SELF"], 
+                      qui contient le nom du fichier en cours d'éxecution 
+                      comme valeur de l'attribut action.
+                    -->
+    <form
+      method="post"
+      action="formulaire.php"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <fieldset>
+        <!-- 
+                       l'élément <fieldset permet, a l'intérieur d'un même formulaire, 
+                        de créer des blocs visuels contenus entre les balises 
+                        <fieldset> et </fieldset> et donc structurer le formulaire 
+                        en fonction des champs
+                        qu'il contient, ce qui améliore la présentation.
+                    -->
+        <legend>
+          <!--
+                      l'élément <legend> contient le titre de chacun de ces blocs.
+                      A l'intérieur de chaque bloc se trouvent les éléments HTML qui 
+                      créent les champs visibles ou invisibles du formulaire 
+                    -->
+          <b>Espace Admin</b>
+          <!--  Corps du formulaire contenant les différents composants -->
+        </legend>
+
+        <button>CREATION</button>
+        <button>AJOUT</button>
+        <button>SUPPRESSION</button>
+        <button>MODIFICATION</button><br /><br/>
+        <fieldset>
+          <legend></legend>
+          <button>COMPTE EMPLOYEE</button>
+          <button>COMPTE VETERINAIRE</button>
+          <button>ESPACE ZOO</button><br />
+        </fieldset>
+
+        <fieldset>
+          <legend><b>Espace Employee</b></legend>
+          <label>Employe(e) :</label
+          ><input type="text" name="Employe" size="40" maxlength="256" />
+          <label>Nom :</label
+          ><input type="text" name="Nom" size="40" maxlength="256" />
+
+          <label>Mot de Passe:</label
+          ><input type="text" name="mdp" size="40" maxlength="256" />
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend><b>Espace vétérinaire</b></legend>
+          <label>Veterinaire :</label
+          ><input type="text" name="Veterinaire" size="40" maxlength="256" />
+          <label>Nom :</label
+          ><input type="text" name="Nom" size="40" maxlength="256" />
+          <label>Mot de Passe:</label
+          ><input type="text" name="mdp" size="40" maxlength="256" />
+        </fieldset>
+
+        <br />
+
+        <fieldset>
+          <legend><b>Espace ZOO</b></legend>
+
+          <!--  Corps du formulaire contenant les différents composants -->
+
+          <button>Animal</button>
+          <button>Habitacle</button>
+          <button>Service</button>
+          <button>Horaire</button>
+          <br />
+          <fieldset>
+            <legend>Animal</legend>
+            <label>Nom :</label
+            ><input type="text" name="Race" size="40" maxlength="256" />
+            <label>Race:</label>
+            <input type="text" name="Nom" size="40" maxlength="256" />
+          </fieldset>
+          <fieldset>
+            <legend>Habitacle</legend>
+            <label>Nom :</label
+            ><input type="text" name="Race" size="40" maxlength="256" /> <br />
+            <br />
+            <textarea rows="10" cols="40" name="suggestions" id="">
+.....Description ici .....
+                                                              </textarea
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <b>Service</b>
+            </legend>
+
+            <textarea rows="10" cols="40" name="suggestions" id="">
+.....Service ici .....
+                    </textarea
+            >
+          </fieldset>
+          <fieldset>
+            <legend>
+              <b>Horaire</b>
+            </legend>
+            <br />
+            <label>Le :</label
+            ><input
+              type="date"
+              name="date"
+              min="1974_12_02"
+              max="2024_02_05"
+            /><br />
+            <textarea rows="10" cols="40" name="suggestions" id="">
+.....Horaire ici .....
+                        </textarea
+            >
+          </fieldset>
+        </fieldset>
+      </fieldset>
+    </form>
+  </body>
+</html>
